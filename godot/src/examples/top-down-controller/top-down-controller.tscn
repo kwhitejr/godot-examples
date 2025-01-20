@@ -443,7 +443,6 @@ y_sort_enabled = true
 [node name="EggCounter" parent="HUD" instance=ExtResource("1_xh04o")]
 
 [node name="Player" parent="." instance=ExtResource("1_jnlgi")]
-speed = null
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
@@ -500,3 +499,12 @@ position = Vector2(154, -21)
 
 [node name="Egg5" parent="." instance=ExtResource("13_rlf7n")]
 position = Vector2(-57, -30)
+
+[node name="Chicken3" parent="." instance=ExtResource("12_beptg")]
+position = Vector2(-212, 79)
+
+[node name="Chicken4" parent="." instance=ExtResource("12_beptg")]
+position = Vector2(-185, -105)
+
+[node name="Chicken5" parent="." instance=ExtResource("12_beptg")]
+position = Vector2(-34, 176)
