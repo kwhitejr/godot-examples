@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://b6bk5yu1m8vsr"]
+
+[ext_resource type="Script" path="res://src/characters/cow/animated_sprite_2d.gd" id="1_ivila"]
+[ext_resource type="Script" path="res://src/characters/cow/cow.gd" id="1_tsorb"]
+[ext_resource type="Texture2D" uid="uid://dx2bc0g63vubi" path="res://src/assets/art/Sprout Lands/Characters/Free Cow Sprites.png" id="1_ueq06"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_23bj5"]
+size = Vector2(17, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hcxtw"]
+atlas = ExtResource("1_ueq06")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lmr8"]
+atlas = ExtResource("1_ueq06")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yp5e4"]
+atlas = ExtResource("1_ueq06")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swfta"]
+atlas = ExtResource("1_ueq06")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sm7qy"]
+atlas = ExtResource("1_ueq06")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_86c7d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hcxtw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1lmr8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yp5e4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_swfta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sm7qy")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Cow" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_tsorb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 7.5)
+shape = SubResource("RectangleShape2D_23bj5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_86c7d")
+animation = &"idle"
+script = ExtResource("1_ivila")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="idle" from="." to="AnimatedSprite2D" method="_on_cow_idle"]
+[connection signal="walk" from="." to="AnimatedSprite2D" method="_on_cow_walk"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
