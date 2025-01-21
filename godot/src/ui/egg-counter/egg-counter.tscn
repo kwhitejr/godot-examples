@@ -195,6 +195,18 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pe4wk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yvca3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pe4wk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yvca3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pe4wk")
 }],
 "loop": false,
 "name": &"smile",
@@ -270,7 +282,9 @@ metadata/_edit_group_ = true
 position = Vector2(63, -2)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_8an37")
-animation = &"idle"
+animation = &"smile"
+frame = 5
+frame_progress = 1.0
 script = ExtResource("3_rgt6w")
 metadata/_edit_group_ = true
 

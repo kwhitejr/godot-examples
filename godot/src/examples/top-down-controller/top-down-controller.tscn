@@ -443,6 +443,7 @@ y_sort_enabled = true
 [node name="EggCounter" parent="HUD" instance=ExtResource("1_xh04o")]
 
 [node name="Player" parent="." instance=ExtResource("1_jnlgi")]
+speed = 200.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
