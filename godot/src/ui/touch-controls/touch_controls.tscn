@@ -16,10 +16,7 @@ grow_vertical = 2
 
 [node name="Virtual Joystick" parent="HBoxContainer" instance=ExtResource("1_0mk50")]
 modulate = Color(1, 1, 1, 0.392157)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-pressed_color = Color(1, 0.0654003, 0.291445, 1)
+pressed_color = Color(0.00929732, 0.523018, 0.667236, 1)
 clampzone_size = 100.0
 joystick_mode = 1
 action_left = "move_left"

@@ -1,7 +1,7 @@
 class_name Player
 extends CharacterBody2D
 
-@export var speed : float = 200.0
+@export var speed : float = 150.0
 
 signal player_idle(normalized : Vector2)
 signal player_walk(normalized : Vector2)
