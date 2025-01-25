@@ -452,7 +452,7 @@ offset_bottom = 40.0
 [node name="TouchControls" parent="Control" instance=ExtResource("2_01hwg")]
 
 [node name="Player" parent="." instance=ExtResource("1_jnlgi")]
-speed = 200.0
+speed = 150.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 z_index = 2
