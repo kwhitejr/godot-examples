@@ -4,7 +4,17 @@
 
 [node name="TouchControls" type="CanvasLayer"]
 
-[node name="Virtual Joystick" parent="." instance=ExtResource("1_0mk50")]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 152.0
+offset_right = 1.0
+offset_bottom = -137.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Virtual Joystick" parent="HBoxContainer" instance=ExtResource("1_0mk50")]
 modulate = Color(1, 1, 1, 0.392157)
 pressed_color = Color(0.00929732, 0.523018, 0.667236, 1)
 clampzone_size = 100.0
