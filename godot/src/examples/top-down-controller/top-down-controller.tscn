@@ -456,7 +456,7 @@ speed = 200.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 z_index = 2
-zoom = Vector2(2, 2)
+zoom = Vector2(3, 3)
 process_callback = 0
 script = ExtResource("3_q0tr2")
 
