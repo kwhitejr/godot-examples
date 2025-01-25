@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 Events="*res://src/libs/events.gd"
 
+[display]
+
+window/stretch/aspect="ignore"
+
 [gui]
 
 theme/custom_font="res://src/assets/art/Sprout Lands/fonts/pixelFont-7-8x14-sproutLands.ttf"
