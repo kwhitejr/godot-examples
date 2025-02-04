@@ -13,7 +13,7 @@ offset_bottom = 40.0
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
-size = Vector2i(720, 720)
+size = Vector2i(1080, 1080)
 render_target_update_mode = 4
 
 [node name="TopDownController" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_sdga6")]
