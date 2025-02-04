@@ -16,5 +16,4 @@ func format_seconds(duration: float) -> String:
 	var minutes := int(duration / 60)
 	var seconds := fmod(duration, 60)
 	var milliseconds := fmod(duration, 1) * 100
-	print("%02d:%02d:%02d" % [minutes, seconds, milliseconds])
 	return "%02d:%02d:%02d" % [minutes, seconds, milliseconds]
