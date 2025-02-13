@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bvypi4wo2acgj"]
+[gd_scene load_steps=30 format=3 uid="uid://bvypi4wo2acgj"]
 
 [ext_resource type="Texture2D" uid="uid://bjdt31awensku" path="res://src/assets/art/Sprout Lands/UI Sprites/Dialouge UI/Emotes/Teemo Basic emote animations sprite sheet.png" id="1_r452r"]
 [ext_resource type="Texture2D" uid="uid://b2ydokqixnyg" path="res://src/assets/art/Sprout Lands/UI Sprites/Sprite sheet for Basic Pack.png" id="2_l8imk"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://src/ui/egg-counter/egg_counter_vbox.gd" id="4_2gkrr"]
 [ext_resource type="Texture2D" uid="uid://dq1lb1qryqyds" path="res://src/assets/art/Sprout Lands/Objects/Egg_item.png" id="4_cqwp5"]
 [ext_resource type="Script" path="res://src/ui/egg-counter/timer.gd" id="4_e585m"]
+[ext_resource type="PackedScene" uid="uid://72xspj386vnu" path="res://src/ui/main_menu_button/main_menu_button.tscn" id="7_ynb5d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4i5rj"]
 atlas = ExtResource("1_r452r")
@@ -336,6 +337,10 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.564706, 0.384314, 0.364706, 1)
 text = "Eggs"
 horizontal_alignment = 1
+
+[node name="MainMenuButton" parent="MarginContainer" instance=ExtResource("7_ynb5d")]
+layout_mode = 2
+size_flags_horizontal = 8
 
 [node name="PortraitTimer" type="Timer" parent="."]
 

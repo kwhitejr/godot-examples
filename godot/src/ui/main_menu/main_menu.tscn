@@ -1,0 +1,94 @@
+[gd_scene load_steps=5 format=3 uid="uid://vb1287rx7v2m"]
+
+[ext_resource type="Texture2D" uid="uid://b2ydokqixnyg" path="res://src/assets/art/Sprout Lands/UI Sprites/Sprite sheet for Basic Pack.png" id="1_1o168"]
+[ext_resource type="FontFile" uid="uid://bgih6vl4jh276" path="res://src/assets/fonts/Early GameBoy.ttf" id="2_t1ouu"]
+[ext_resource type="Script" path="res://src/ui/main_menu/demo_select.gd" id="3_jwsl4"]
+[ext_resource type="Theme" uid="uid://cfctgtdqvwl34" path="res://src/ui/base_ui_theme.tres" id="3_noswa"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("1_1o168")
+region_rect = Rect2(59, 107, 26, 26)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 100
+
+[node name="Title Card" type="VBoxContainer" parent="MarginContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer2/VBoxContainer/Title Card"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_t1ouu")
+theme_override_font_sizes/font_size = 48
+text = "Godot 2D Examples"
+
+[node name="Subtitle" type="Label" parent="MarginContainer2/VBoxContainer/Title Card"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_t1ouu")
+theme_override_font_sizes/font_size = 24
+text = "Select a Demo!"
+
+[node name="DemoSelect" type="VBoxContainer" parent="MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+script = ExtResource("3_jwsl4")
+
+[node name="Resume" type="Button" parent="MarginContainer2/VBoxContainer/DemoSelect"]
+layout_mode = 2
+theme = ExtResource("3_noswa")
+disabled = true
+text = "Resume"
+
+[node name="TopDown2DController" type="Button" parent="MarginContainer2/VBoxContainer/DemoSelect"]
+layout_mode = 2
+theme = ExtResource("3_noswa")
+text = "Top Down 2D Character Controller: Egg Collector"
+
+[node name="GOAP" type="Button" parent="MarginContainer2/VBoxContainer/DemoSelect"]
+layout_mode = 2
+theme = ExtResource("3_noswa")
+theme_override_fonts/font = ExtResource("2_t1ouu")
+text = "Goal Oriented Action Planning"
+
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/DemoSelect/Resume" to="MarginContainer2/VBoxContainer/DemoSelect" method="_on_resume_pressed"]
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/DemoSelect/TopDown2DController" to="MarginContainer2/VBoxContainer/DemoSelect" method="_on_top_down_2d_controller_button_pressed"]
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/DemoSelect/GOAP" to="MarginContainer2/VBoxContainer/DemoSelect" method="_on_goap_button_pressed"]

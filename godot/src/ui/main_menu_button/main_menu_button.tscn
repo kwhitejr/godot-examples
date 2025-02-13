@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://72xspj386vnu"]
+
+[ext_resource type="Texture2D" uid="uid://b2ydokqixnyg" path="res://src/assets/art/Sprout Lands/UI Sprites/Sprite sheet for Basic Pack.png" id="1_8iw66"]
+[ext_resource type="Script" path="res://src/ui/main_menu_button/main_menu_button.gd" id="2_dcbci"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdgkv"]
+atlas = ExtResource("1_8iw66")
+region = Rect2(645, 68, 22, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qixnu"]
+atlas = ExtResource("1_8iw66")
+region = Rect2(677, 67, 22, 25)
+
+[node name="MainMenuButton" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = -88.0
+offset_right = -66.0
+offset_bottom = 24.0
+scale = Vector2(4, 4)
+texture_normal = SubResource("AtlasTexture_fdgkv")
+texture_pressed = SubResource("AtlasTexture_qixnu")
+script = ExtResource("2_dcbci")
+
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]

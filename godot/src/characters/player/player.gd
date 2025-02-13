@@ -9,6 +9,7 @@ signal player_walk(normalized : Vector2)
 var normalized_direction := Vector2()
 var click_position := position
 var target_position := Vector2()
+var egg_count := 0
 
 var MIN_DISTANCE_PIXELS: float = 3.0
 
@@ -40,4 +41,7 @@ func handle_click_movement() -> void:
 	move_and_slide()
 
 func collect_egg(egg : Egg) -> void:
-	Events.emit_signal("collect_egg")
+	egg_count += 1
+	Events.emit_signal("egg_collector_collect_egg", egg_count)
+	if (egg_count == 50):
+		Events.emit_signal("egg_collector_end_game")

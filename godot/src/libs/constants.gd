@@ -1,0 +1,7 @@
+class_name Constants
+
+
+enum DEMO {
+	TOP_DOWN_CONTROLLER,
+	GOAL_ORIENTED_ACTION_PLANNING
+}
