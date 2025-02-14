@@ -1,0 +1,151 @@
+[gd_scene load_steps=20 format=3 uid="uid://bjdl1g0l2bs6x"]
+
+[ext_resource type="Texture2D" uid="uid://mhnuijnx5ukc" path="res://src/assets/art/kevinsmomshouse/forestSprites_ v1.2/mHero_ [elf].png" id="1_lvfk4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1u6w7"]
+size = Vector2(10, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmbtn"]
+atlas = ExtResource("1_lvfk4")
+region = Rect2(0, 120, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aq7d4"]
+atlas = ExtResource("1_lvfk4")
+region = Rect2(24, 120, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6a7rb"]
+atlas = ExtResource("1_lvfk4")
+region = Rect2(48, 120, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31kcl"]
+atlas = ExtResource("1_lvfk4")
+region = Rect2(72, 120, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bra01"]
+atlas = ExtResource("1_lvfk4")
+region = Rect2(0, 96, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lb10i"]
+atlas = ExtResource("1_lvfk4")
+region = Rect2(24, 96, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mbud"]
+atlas = ExtResource("1_lvfk4")
+region = Rect2(48, 96, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44i3o"]
+atlas = ExtResource("1_lvfk4")
+region = Rect2(72, 96, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_285jh"]
+atlas = ExtResource("1_lvfk4")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dk01x"]
+atlas = ExtResource("1_lvfk4")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j66ba"]
+atlas = ExtResource("1_lvfk4")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s332r"]
+atlas = ExtResource("1_lvfk4")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ggkfc"]
+atlas = ExtResource("1_lvfk4")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qao0o"]
+atlas = ExtResource("1_lvfk4")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ngyii"]
+atlas = ExtResource("1_lvfk4")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ddqi"]
+atlas = ExtResource("1_lvfk4")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x85el"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wmbtn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aq7d4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6a7rb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31kcl")
+}],
+"loop": false,
+"name": &"die",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bra01")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lb10i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0mbud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44i3o")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_285jh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dk01x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j66ba")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s332r")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ggkfc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qao0o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ngyii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ddqi")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}]
+
+[node name="Hero" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_1u6w7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_x85el")
+animation = &"idle"
