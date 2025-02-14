@@ -30,7 +30,7 @@ func _process(delta):
 	# place to leave it, but I kept here to keep things simple.
 		var blackboard = {
 			"position": _actor.position,
-			}
+		}
 
 		for s in GoapWorldState._state:
 			blackboard[s] = GoapWorldState._state[s]

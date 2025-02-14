@@ -13,5 +13,5 @@ func priority() -> int:
 
 func get_desired_state() -> Dictionary:
 	return {
-		"has_firepit": true
+		GoapConstants.CONDITIONS.HAS_FIREPIT: true
 	}

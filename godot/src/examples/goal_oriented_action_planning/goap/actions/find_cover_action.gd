@@ -13,7 +13,7 @@ func get_preconditions() -> Dictionary:
 
 func get_effects() -> Dictionary:
 	return {
-		"protected": true
+		GoapConstants.CONDITIONS.IS_PROTECTED: true
 	}
 
 

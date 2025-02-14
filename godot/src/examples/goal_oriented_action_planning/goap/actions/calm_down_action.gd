@@ -9,13 +9,13 @@ func get_cost(_blackboard) -> int:
 
 func get_preconditions() -> Dictionary:
 	return {
-		"protected": true
+		GoapConstants.CONDITIONS.IS_PROTECTED: true
 	}
 
 
 func get_effects() -> Dictionary:
 	return {
-		"is_frightened": false
+		GoapConstants.CONDITIONS.IS_FRIGHTENED: false
 	}
 
 

@@ -20,7 +20,7 @@ func get_preconditions() -> Dictionary:
 
 func get_effects() -> Dictionary:
 	return {
-		"has_wood": true,
+		GoapConstants.CONDITIONS.HAS_WOOD: true,
 	}
 
 

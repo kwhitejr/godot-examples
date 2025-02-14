@@ -13,5 +13,5 @@ func priority() -> int:
 
 func get_desired_state() -> Dictionary:
 	return {
-		"is_frightened": false
+		GoapConstants.CONDITIONS.IS_FRIGHTENED: false
 	}

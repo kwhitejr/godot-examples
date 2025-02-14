@@ -13,7 +13,7 @@ func get_preconditions() -> Dictionary:
 
 func get_effects() -> Dictionary:
 	return {
-		"is_hungry": false
+		GoapConstants.CONDITIONS.IS_HUNGRY: false
 	}
 
 

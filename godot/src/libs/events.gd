@@ -1,5 +1,5 @@
-# class_name Events
 extends Node
+#class_name Events
 
 
 signal egg_collector_collect_egg(egg_count: int)

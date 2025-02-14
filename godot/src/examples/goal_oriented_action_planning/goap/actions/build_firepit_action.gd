@@ -11,13 +11,13 @@ func get_cost(_blackboard) -> int:
 
 func get_preconditions() -> Dictionary:
 	return {
-		"has_wood": true
+		GoapConstants.CONDITIONS.HAS_WOOD: true
 	}
 
 
 func get_effects() -> Dictionary:
 	return {
-		"has_firepit": true
+		GoapConstants.CONDITIONS.HAS_FIREPIT: true
 	}
 
 

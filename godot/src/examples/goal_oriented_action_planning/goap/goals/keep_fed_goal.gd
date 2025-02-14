@@ -14,5 +14,5 @@ func priority() -> int:
 
 func get_desired_state() -> Dictionary:
 	return {
-		"is_hungry": false
+		GoapConstants.CONDITIONS.IS_HUNGRY: false
 	}
