@@ -3,6 +3,11 @@ extends Node
 var _state = {
 }
 
+func _ready() -> void:
+	GoapEvents.goap_set_hunger.connect(_on_goap_set_hunger)
+
+func _on_goap_set_hunger(hunger_value: int):
+	set_state(GoapConstants.STATE_HUNGER, hunger_value)
 
 func get_state(state_name, default = null):
 	return _state.get(state_name, default)
@@ -34,7 +39,7 @@ func get_closest_element(group_name, reference):
 	return closest_element
 
 
-func console_message(object):
-	var console = get_tree().get_nodes_in_group("console")[0] as TextEdit
-	console.text += "\n%s" % str(object)
-	console.set_caret_line(console.get_line_count())
+#func console_message(object):
+	#var console = get_tree().get_nodes_in_group("console")[0] as TextEdit
+	#console.text += "\n%s" % str(object)
+	#console.set_caret_line(console.get_line_count())

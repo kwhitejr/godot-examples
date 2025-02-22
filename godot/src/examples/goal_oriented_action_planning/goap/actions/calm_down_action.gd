@@ -3,6 +3,9 @@ extends AbstractAction
 class_name CalmDownAction
 
 
+func get_clazz() -> String:
+	return "CalmDownAction"
+	
 func get_cost(_blackboard) -> int:
 	return 1
 

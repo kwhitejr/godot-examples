@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvlio778bbhm3"]
+
+[ext_resource type="Script" path="res://src/examples/goal_oriented_action_planning/objects/tree.gd" id="1_i3h2f"]
+[ext_resource type="Texture2D" uid="uid://cnexpfq7stqbo" path="res://src/assets/art/kevinsmomshouse/fantasy_ [version 2.0]/forest_/forest_ [resources].png" id="2_k6g40"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53s1r"]
+atlas = ExtResource("2_k6g40")
+region = Rect2(18, 23, 12, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tcfj5"]
+size = Vector2(8, 14)
+
+[node name="Tree" type="StaticBody2D" groups=["tree"]]
+script = ExtResource("1_i3h2f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -10)
+texture = SubResource("AtlasTexture_53s1r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, -11)
+shape = SubResource("RectangleShape2D_tcfj5")
+
+[node name="ChopCooldownTimer" type="Timer" parent="."]
+one_shot = true

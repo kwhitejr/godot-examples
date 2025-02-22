@@ -5,6 +5,9 @@ class_name BuildFirepitAction
 const Firepit = preload("res://src/examples/goal_oriented_action_planning/objects/firepit.tscn")
 
 
+func get_clazz() -> String:
+	return "BuildFirepitAction"
+	
 func get_cost(_blackboard) -> int:
 	return 1
 
@@ -22,7 +25,7 @@ func get_effects() -> Dictionary:
 
 
 func perform(actor, delta) -> bool:
-	var _closest_spot = GoapWorldState.get_closest_element("firepit_spot", actor)
+	var _closest_spot = GoapWorldState.get_closest_element(GoapConstants.GROUP_FIREPIT_SPOT, actor)
 
 	if _closest_spot == null:
 		return false
@@ -32,7 +35,8 @@ func perform(actor, delta) -> bool:
 			actor.get_parent().add_child(firepit)
 			firepit.position = _closest_spot.position
 			firepit.z_index = _closest_spot.z_index
-			GoapWorldState.set_state("has_wood", false)
+			GoapWorldState.set_state(GoapConstants.STATE_HAS_WOOD, false)
+			actor.make_idle(actor.position.direction_to(firepit.position))
 			return true
 
 	actor.move_to(actor.position.direction_to(_closest_spot.position), delta)

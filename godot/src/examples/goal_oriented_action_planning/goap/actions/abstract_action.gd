@@ -7,6 +7,9 @@ extends Node
 class_name AbstractAction
 
 
+func get_clazz() -> String:
+	return "AbstractAction"
+	
 #
 # This indicates if the action should be considered or not.
 #

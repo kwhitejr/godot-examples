@@ -3,6 +3,10 @@ extends AbstractAction
 class_name FindFoodAction
 
 
+func get_clazz() -> String:
+	return "FindFoodAction"
+
+
 func get_cost(_blackboard) -> int:
 	return 1
 
@@ -18,13 +22,14 @@ func get_effects() -> Dictionary:
 
 
 func perform(actor, delta) -> bool:
-	var closest_food = GoapWorldState.get_closest_element("food", actor)
+	var closest_food = GoapWorldState.get_closest_element(GoapConstants.GROUP_FOOD, actor)
 
 	if closest_food == null:
 		return false
 
-	if closest_food.position.distance_to(actor.position) < 5:
-		GoapWorldState.set_state("hunger", GoapWorldState.get_state("hunger") - closest_food.nutrition)
+	if closest_food.position.distance_to(actor.position) < 20:
+		var current_hunger = GoapWorldState.get_state(GoapConstants.STATE_HUNGER)
+		GoapWorldState.set_state(GoapConstants.STATE_HUNGER, current_hunger - closest_food.nutrition)
 		closest_food.queue_free()
 		return true
 

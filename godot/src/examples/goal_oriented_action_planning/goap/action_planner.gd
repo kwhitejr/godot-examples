@@ -21,8 +21,7 @@ func set_actions(actions: Array[AbstractAction]):
 # Returns a list of actions to be executed.
 #
 func get_plan(goal: AbstractGoal, blackboard = {}) -> Array:
-	print("Goal: %s" % goal.get_global_name())
-	GoapWorldState.console_message("Goal: %s" % goal.get_global_name())
+	#GoapWorldState.console_message("Goal: %s" % goal.get_class())
 	var desired_state = goal.get_desired_state().duplicate()
 
 	if desired_state.is_empty():
@@ -162,7 +161,7 @@ func _transform_tree_into_array(p, blackboard):
 #
 func _print_plan(plan):
 	var actions = []
-	for a in plan.actions:
-		actions.push_back(a.get_clazz())
+	for action in plan.actions:
+		actions.push_back(action.get_clazz())
 	print({"cost": plan.cost, "actions": actions})
-	GoapWorldState.console_message({"cost": plan.cost, "actions": actions})
+	#GoapWorldState.console_message({"cost": plan.cost, "actions": actions})

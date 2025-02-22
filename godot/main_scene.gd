@@ -2,7 +2,6 @@ class_name MainScene
 extends Node2D
 
 
-
 @onready var top_down_game_scene := preload("res://src/examples/top_down_controller/top_down_controller.tscn")
 @onready var goap_game_scene := preload("res://src/examples/goal_oriented_action_planning/goal_oriented_action_planning.tscn")
 @onready var top_down_ui_scene := preload("res://src/ui/egg-counter/egg-counter.tscn")

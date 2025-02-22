@@ -3,8 +3,11 @@ extends AbstractGoal
 class_name CalmDownGoal
 
 
+func get_clazz() -> String:
+	return "CalmDownGoal"
+	
 func is_valid() -> bool:
-	return GoapWorldState.get_state("is_frightened", false)
+	return GoapWorldState.get_state(GoapConstants.STATE_IS_FRIGHTENED, false)
 
 
 func priority() -> int:

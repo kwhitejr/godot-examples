@@ -3,8 +3,11 @@ extends AbstractGoal
 class_name KeepFirepitBurningGoal
 
 
+func get_clazz() -> String:
+	return "KeepFirepitBurningGoal"
+
 func is_valid() -> bool:
-	return GoapWorldState.get_elements("firepit").size() == 0
+	return GoapWorldState.get_elements(GoapConstants.GROUP_FIREPIT).size() == 0
 
 
 func priority() -> int:
