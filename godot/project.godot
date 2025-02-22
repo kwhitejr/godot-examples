@@ -18,6 +18,9 @@ config/icon="res://icon.svg"
 [autoload]
 
 Events="*res://src/libs/events.gd"
+GoapWorldState="*res://src/examples/goal_oriented_action_planning/world/world_state.gd"
+GoapExample="*res://src/examples/goal_oriented_action_planning/goap/goap_example.gd"
+GoapEvents="*res://src/examples/goal_oriented_action_planning/common/events.gd"
 
 [display]
 

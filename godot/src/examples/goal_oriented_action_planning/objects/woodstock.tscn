@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b70mwk6mo1nog"]
+
+[ext_resource type="Texture2D" uid="uid://cnexpfq7stqbo" path="res://src/assets/art/kevinsmomshouse/fantasy_ [version 2.0]/forest_/forest_ [resources].png" id="1_0j1xa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h23t1"]
+atlas = ExtResource("1_0j1xa")
+region = Rect2(97, 130, 14, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sd1r7"]
+size = Vector2(10, 7)
+
+[node name="Woodstock" type="StaticBody2D" groups=["woodstock"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_h23t1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_sd1r7")

@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0x8uf4nfkbav"]
+
+[ext_resource type="Script" path="res://src/examples/goal_oriented_action_planning/objects/mushroom.gd" id="1_fvsml"]
+[ext_resource type="Texture2D" uid="uid://cnexpfq7stqbo" path="res://src/assets/art/kevinsmomshouse/fantasy_ [version 2.0]/forest_/forest_ [resources].png" id="2_khel3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7geiv"]
+atlas = ExtResource("2_khel3")
+region = Rect2(147, 18, 6, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h5koh"]
+size = Vector2(6, 9)
+
+[node name="Mushroom" type="StaticBody2D" groups=["food"]]
+script = ExtResource("1_fvsml")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("AtlasTexture_7geiv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_h5koh")

@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=3 uid="uid://vfugm06o8day"]
+
+[ext_resource type="Texture2D" uid="uid://cnexpfq7stqbo" path="res://src/assets/art/kevinsmomshouse/fantasy_ [version 2.0]/forest_/forest_ [resources].png" id="1_hhfau"]
+[ext_resource type="Script" path="res://src/examples/goal_oriented_action_planning/objects/firepit.gd" id="1_v2n4a"]
+[ext_resource type="Theme" uid="uid://cfctgtdqvwl34" path="res://src/ui/base_ui_theme.tres" id="3_2yj3a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_og3yt"]
+atlas = ExtResource("1_hhfau")
+region = Rect2(112, 120, 16, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpw6l"]
+atlas = ExtResource("1_hhfau")
+region = Rect2(128, 120, 16, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctenq"]
+atlas = ExtResource("1_hhfau")
+region = Rect2(144, 120, 16, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14a4u"]
+atlas = ExtResource("1_hhfau")
+region = Rect2(160, 120, 16, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f3lxb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_og3yt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hpw6l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctenq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14a4u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Firepit" type="Node2D" groups=["firepit"]]
+script = ExtResource("1_v2n4a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_f3lxb")
+frame = 3
+frame_progress = 0.44933
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = -16.0
+offset_top = -32.0
+offset_right = 16.0
+offset_bottom = -12.0
+theme = ExtResource("3_2yj3a")
+horizontal_alignment = 1
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
