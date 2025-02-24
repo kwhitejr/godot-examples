@@ -1,7 +1,8 @@
-[gd_scene load_steps=26 format=4 uid="uid://dgvq0ay26c0n7"]
+[gd_scene load_steps=27 format=4 uid="uid://dgvq0ay26c0n7"]
 
 [ext_resource type="PackedScene" uid="uid://bvypi4wo2acgj" path="res://src/examples/top_down_controller/ui/egg_counter.tscn" id="1_52rum"]
 [ext_resource type="PackedScene" uid="uid://c44o12ut3y18h" path="res://src/examples/top_down_controller/player/player.tscn" id="1_jnlgi"]
+[ext_resource type="PackedScene" uid="uid://ctcmtw6g3on0u" path="res://src/ui/touch_controls/touch_controls.tscn" id="2_gxmo7"]
 [ext_resource type="Texture2D" uid="uid://cnj3mf130xgd" path="res://src/assets/art/Sprout Lands/Tilesets/Grass.png" id="3_8pvjg"]
 [ext_resource type="Script" path="res://src/examples/top_down_controller/camera_2d.gd" id="3_q0tr2"]
 [ext_resource type="Texture2D" uid="uid://3ltg53uler4e" path="res://src/assets/art/Sprout Lands/Tilesets/Tilled_Dirt.png" id="4_0hntb"]
@@ -441,6 +442,16 @@ y_sort_enabled = true
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="EggCounter" parent="UI" instance=ExtResource("1_52rum")]
+
+[node name="Touch" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TouchControls" parent="UI/Touch" instance=ExtResource("2_gxmo7")]
+visible = false
 
 [node name="Player" parent="." instance=ExtResource("1_jnlgi")]
 speed = 150.0

@@ -4,7 +4,6 @@ extends Control
 @onready var ToggleConsoleButton := $VBoxContainer/MarginContainer/HBoxContainer/ToggleConsoleButton
 @onready var HungerProgressBar := $VBoxContainer/MarginContainer/HBoxContainer/HungerProgressBar
 
-
 func _ready() -> void:
 	GoapEvents.goap_set_hunger.connect(_on_goap_set_hunger)
 
