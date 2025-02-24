@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d3dmd6d5numc4"]
 
 [ext_resource type="Script" path="res://main_scene.gd" id="1_mpusp"]
-[ext_resource type="PackedScene" uid="uid://ctcmtw6g3on0u" path="res://src/ui/touch-controls/touch_controls.tscn" id="3_bpary"]
+[ext_resource type="PackedScene" uid="uid://ctcmtw6g3on0u" path="res://src/ui/touch_controls/touch_controls.tscn" id="3_bpary"]
 [ext_resource type="PackedScene" uid="uid://vb1287rx7v2m" path="res://src/ui/main_menu/main_menu.tscn" id="3_pco0d"]
 
 [node name="MainScene" type="Node2D"]

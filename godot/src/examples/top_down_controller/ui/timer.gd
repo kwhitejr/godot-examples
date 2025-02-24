@@ -6,7 +6,7 @@ var is_timer_stopped := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Events.egg_collector_end_game.connect(_on_player_end_game)
+	EggCollectorEvents.ec_end_game.connect(_on_player_end_game)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

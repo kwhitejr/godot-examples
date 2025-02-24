@@ -39,6 +39,7 @@ layout_mode = 2
 size_flags_vertical = 4
 
 [node name="ReloadButton" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer"]
+process_mode = 3
 layout_mode = 2
 text = "Reload"
 

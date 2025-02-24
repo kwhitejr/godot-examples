@@ -42,6 +42,6 @@ func handle_click_movement() -> void:
 
 func collect_egg(egg : Egg) -> void:
 	egg_count += 1
-	Events.emit_signal("egg_collector_collect_egg", egg_count)
+	EggCollectorEvents.emit_signal("ec_collect_egg", egg_count)
 	if (egg_count == 50):
-		Events.emit_signal("egg_collector_end_game")
+		EggCollectorEvents.emit_signal("ec_end_game")
