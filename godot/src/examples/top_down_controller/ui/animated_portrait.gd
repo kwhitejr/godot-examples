@@ -1,5 +1,6 @@
 extends AnimatedSprite2D
 
+
 @onready var portrait_timer := $"../../../../../../../PortraitTimer"
 
 @export var portait_timer_duration_sec : float = 4.0
@@ -14,8 +15,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
-
 
 func _on_portrait_timer_timeout() -> void:
 	# play random idle animation

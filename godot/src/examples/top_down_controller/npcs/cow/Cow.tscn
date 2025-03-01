@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://b6bk5yu1m8vsr"]
 
-[ext_resource type="Script" path="res://src/characters/cow/animated_sprite_2d.gd" id="1_ivila"]
-[ext_resource type="Script" path="res://src/characters/cow/cow.gd" id="1_tsorb"]
+[ext_resource type="Script" path="res://src/examples/top_down_controller/npcs/cow/animated_sprite_2d.gd" id="1_ivila"]
+[ext_resource type="Script" path="res://src/examples/top_down_controller/npcs/cow/cow.gd" id="1_tsorb"]
 [ext_resource type="Texture2D" uid="uid://dx2bc0g63vubi" path="res://src/assets/art/Sprout Lands/Characters/Free Cow Sprites.png" id="1_ueq06"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_23bj5"]

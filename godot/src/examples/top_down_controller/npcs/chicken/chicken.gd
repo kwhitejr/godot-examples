@@ -16,7 +16,7 @@ signal walk(direction : Vector2)
 var direction : Vector2 = Vector2.ZERO
 var chicken_state : CHICKEN_STATE = CHICKEN_STATE.IDLE
 
-var egg_scene = preload("res://src/objects/egg/egg.tscn")
+var egg_scene := preload("res://src/examples/top_down_controller/objects/egg.tscn")
 
 func _ready():
 	handle_chicken()

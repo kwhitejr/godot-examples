@@ -363,6 +363,11 @@ sources/0 = SubResource("TileSetAtlasSource_omy0t")
 [node name="GoalOrientedActionPlanning" type="Node2D"]
 script = ExtResource("1_5hrfp")
 
+[node name="UI" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="GoapUi" parent="UI" instance=ExtResource("12_r2302")]
+
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -496,9 +501,5 @@ position = Vector2(216, 35)
 
 [node name="HungerTimer" type="Timer" parent="."]
 autostart = true
-
-[node name="UI" type="CanvasLayer" parent="."]
-
-[node name="GoapUi" parent="UI" instance=ExtResource("12_r2302")]
 
 [connection signal="timeout" from="HungerTimer" to="." method="_on_hunger_timer_timeout"]
