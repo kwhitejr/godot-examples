@@ -1,24 +1,18 @@
 extends Node
 
-var _state = {
-}
+var _world_state = {}
 
-func _ready() -> void:
-	GoapEvents.goap_set_hunger.connect(_on_goap_set_hunger)
-
-func _on_goap_set_hunger(hunger_value: int):
-	set_state(GoapConstants.STATE_HUNGER, hunger_value)
 
 func get_state(state_name, default = null):
-	return _state.get(state_name, default)
+	return _world_state.get(state_name, default)
 
 
 func set_state(state_name, value):
-	_state[state_name] = value
+	_world_state[state_name] = value
 
 
 func clear_state():
-	_state = {}
+	_world_state = {}
 
 
 func get_elements(group_name):

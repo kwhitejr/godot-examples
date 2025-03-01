@@ -2,13 +2,15 @@
 # Abstract Goal 
 # Use as a contract for implemented Goals
 #
-extends Node
-
-class_name AbstractGoal
+class_name AbstractGoal extends Node
 
 func get_clazz() -> String:
+	print(get_class())
 	return "AbstractGoal"
 
+#func _init():
+	#assert(false, "AbstractGoal is an abstract class and should not be instantiated directly.")
+	
 #
 # This indicates if the goal should be considered or not.
 # Sometimes instead of changing the priority, it is easier to
