@@ -73,6 +73,7 @@ theme_override_constants/separation = 16
 script = ExtResource("3_jwsl4")
 
 [node name="Resume" type="Button" parent="MarginContainer2/VBoxContainer/DemoSelect"]
+visible = false
 layout_mode = 2
 theme = ExtResource("3_noswa")
 disabled = true

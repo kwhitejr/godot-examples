@@ -1,7 +1,7 @@
 extends Node2D
 
 
-@onready var GoapScene := $"."
+#@onready var GoapScene := $"."
 
 const MAX_HUNGER := 100
 
@@ -19,7 +19,7 @@ func _on_hunger_timer_timeout():
 func _on_reload_button_pressed():
 	GoapWorldState.clear_state()
 	# warning-ignore:return_value_discarded
-	GoapScene.get_tree().reload_current_scene()
+	get_tree().reload_current_scene()
 	
 func _on_toggle_pause_button_pressed():
-	GoapScene.get_tree().paused = not GoapScene.get_tree().paused
+	get_tree().paused = not get_tree().paused

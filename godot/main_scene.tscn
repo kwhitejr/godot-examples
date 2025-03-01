@@ -7,6 +7,7 @@
 script = ExtResource("1_mpusp")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+process_mode = 3
 offset_right = 40.0
 offset_bottom = 40.0
 

@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://cfctgtdqvwl34" path="res://src/ui/base_ui_theme.tres" id="2_nekpw"]
 
 [node name="GoapUi" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,6 +14,7 @@ grow_vertical = 2
 script = ExtResource("1_oogyq")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+process_mode = 3
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -23,9 +25,11 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+process_mode = 3
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer"]
+process_mode = 3
 layout_mode = 2
 theme = ExtResource("2_nekpw")
 
