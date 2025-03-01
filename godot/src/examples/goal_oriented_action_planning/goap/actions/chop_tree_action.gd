@@ -33,7 +33,7 @@ func perform(actor, delta) -> bool:
 	if _closest_tree:
 		if _closest_tree.position.distance_to(actor.position) < 20:
 				if actor.chop_tree(_closest_tree):
-					actor._state.set_has_wood(true)
+					actor.state.set_has_wood(true)
 					return true
 				return false
 		else:

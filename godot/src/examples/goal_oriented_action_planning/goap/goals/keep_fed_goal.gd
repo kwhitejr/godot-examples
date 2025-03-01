@@ -12,13 +12,13 @@ func get_clazz() -> String:
 	
 # This is not a valid goal when hunger is less than 50.
 func is_valid() -> bool:
-	var hunger_count = _actor._state.get_hunger_count()
+	var hunger_count = _actor.state.get_hunger_count()
 	return hunger_count > 50 \
 		and GoapWorldState.get_elements(GoapConstants.GROUP_FOOD).size() > 0
 
 
 func priority() -> int:
-	var hunger_count = _actor._state.get_hunger_count()
+	var hunger_count = _actor.state.get_hunger_count()
 	return 1 if hunger_count < 75 else 2
 
 

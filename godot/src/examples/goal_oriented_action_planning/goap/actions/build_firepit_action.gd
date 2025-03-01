@@ -35,7 +35,7 @@ func perform(actor, delta) -> bool:
 			actor.get_parent().add_child(firepit)
 			firepit.position = _closest_spot.position
 			firepit.z_index = _closest_spot.z_index
-			actor._state.set_has_wood(false)
+			actor.state.set_has_wood(false)
 			actor.make_idle(actor.position.direction_to(firepit.position))
 			return true
 

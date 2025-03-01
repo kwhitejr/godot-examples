@@ -20,7 +20,7 @@ signal hero_die(direction : Vector2)
 
 const MAX_HUNGER := 100
 var last_direction : Vector2 = Vector2.RIGHT
-@onready var _state := HeroState.new()
+@onready var state : HeroState = HeroState.new()
 
 func _ready() -> void:
   # Here is where I define which goals are available for this
@@ -37,19 +37,13 @@ func _ready() -> void:
 			CalmDownGoal.new(self),
 			RelaxGoal.new()
 		],
-		_state
+		state
 	)
 	add_child(agent)
 
 func _process(_delta) -> void:
-	$HeroUI/VBoxContainer/Fear.visible = _state.meets_precondition(GoapConstants.HERO_STATE_IS_FRIGHTENED, true)
-	$HeroUI/VBoxContainer/Hunger.visible = _state.get_hunger_count() >= 50
-
-#func set_state(key, value) -> void:
-	#_state.set_state(key, value)
-#
-#func get_state(key) -> Variant:
-	#return _state[key]
+	$HeroUI/VBoxContainer/Fear.visible = state.meets_precondition(GoapConstants.HERO_STATE_IS_FRIGHTENED, true)
+	$HeroUI/VBoxContainer/Hunger.visible = state.get_hunger_count() >= 50
 
 func make_idle(direction) -> void:
 	hero_idle.emit(direction)
@@ -67,7 +61,7 @@ func chop_tree(tree) -> bool:
 
 
 func calm_down() -> bool:
-	if _state.meets_precondition(GoapConstants.HERO_STATE_IS_FRIGHTENED, false):
+	if state.meets_precondition(GoapConstants.HERO_STATE_IS_FRIGHTENED, false):
 		return true
 
 	if $CalmDownTimer.is_stopped():
@@ -78,16 +72,16 @@ func calm_down() -> bool:
 
 func _on_detection_radius_body_entered(body) -> void:
 	if body.is_in_group(GoapConstants.GROUP_TROLL):
-		_state.set_state(GoapConstants.HERO_STATE_IS_FRIGHTENED, true)
+		state.set_state(GoapConstants.HERO_STATE_IS_FRIGHTENED, true)
 
 
 func _on_calm_down_timer_timeout() -> void:
-	_state.set_state(GoapConstants.HERO_STATE_IS_FRIGHTENED, false)
+	state.set_state(GoapConstants.HERO_STATE_IS_FRIGHTENED, false)
 
 
 func _on_hunger_timer_timeout() -> void:
-	var hunger : int = _state.get_hunger_count()
+	var hunger : int = state.get_hunger_count()
 	if hunger < MAX_HUNGER:
 		hunger += 2
-	_state.set_hunger_count(hunger)
+	state.set_hunger_count(hunger)
 	GoapEvents.emit_signal("goap_set_hunger", hunger)
