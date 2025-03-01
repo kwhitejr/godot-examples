@@ -14,8 +14,7 @@ extends Node2D
 
 func _ready() -> void:
 	Events.main_menu_change_demo.connect(_on_demo_button_pressed)
-	#Events.main_menu_open.connect(_on_main_menu_open)
-	#Events.main_menu_resume.connect(_on_main_menu_resume)
+
 	
 func start_game(selected_demo: Constants.DEMO) -> void:
 	# Remove Main Menu from game parent

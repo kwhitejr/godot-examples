@@ -12,16 +12,13 @@ func _ready() -> void:
 	mouse_filter = MOUSE_FILTER_STOP
 	set_process_input(true)
 
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		if PauseButton.get_global_rect().has_point(event.position):
-			print("Mouse clicked on PauseButton!")
-
 func _on_goap_set_hunger(hunger_value: int) -> void:
 	HungerProgressBar.value = hunger_value
 
 func _on_reload_button_pressed() -> void:
-	GoapEvents.emit_signal("goap_reload")
+	GoapWorldState.clear_state()
+	# warning-ignore:return_value_discarded
+	get_tree().reload_current_scene()
 
 
 func _on_pause_button_pressed() -> void:	
