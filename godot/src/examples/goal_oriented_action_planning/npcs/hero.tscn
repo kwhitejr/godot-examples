@@ -1,8 +1,8 @@
 [gd_scene load_steps=33 format=3 uid="uid://bjdl1g0l2bs6x"]
 
-[ext_resource type="Script" path="res://src/examples/goal_oriented_action_planning/npcs/hero.gd" id="1_fwgp7"]
+[ext_resource type="Script" uid="uid://bbexvbllx3e2b" path="res://src/examples/goal_oriented_action_planning/npcs/hero.gd" id="1_fwgp7"]
 [ext_resource type="Texture2D" uid="uid://mhnuijnx5ukc" path="res://src/assets/art/kevinsmomshouse/forestSprites_ v1.2/mHero_ [elf].png" id="1_lvfk4"]
-[ext_resource type="Script" path="res://src/examples/goal_oriented_action_planning/npcs/hero_animations.gd" id="3_bum14"]
+[ext_resource type="Script" uid="uid://uqrkccmxq3xp" path="res://src/examples/goal_oriented_action_planning/npcs/hero_animations.gd" id="3_bum14"]
 [ext_resource type="Theme" uid="uid://cfctgtdqvwl34" path="res://src/ui/base_ui_theme.tres" id="3_tpi0m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1u6w7"]

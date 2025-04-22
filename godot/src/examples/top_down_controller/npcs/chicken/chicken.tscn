@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://cqc5mqarcbbr3"]
 
-[ext_resource type="Script" path="res://src/examples/top_down_controller/npcs/chicken/chicken.gd" id="1_a5sdg"]
+[ext_resource type="Script" uid="uid://qlihwdlif52p" path="res://src/examples/top_down_controller/npcs/chicken/chicken.gd" id="1_a5sdg"]
 [ext_resource type="Texture2D" uid="uid://t5ja4wh3p776" path="res://src/assets/art/Sprout Lands/Characters/Free Chicken Sprites.png" id="1_tpida"]
-[ext_resource type="Script" path="res://src/examples/top_down_controller/npcs/chicken/animated_sprite_2d.gd" id="3_86xi3"]
+[ext_resource type="Script" uid="uid://dk2olsun2566o" path="res://src/examples/top_down_controller/npcs/chicken/animated_sprite_2d.gd" id="3_86xi3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ja6pu"]
 size = Vector2(6, 8)

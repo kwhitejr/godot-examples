@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cvlio778bbhm3"]
 
-[ext_resource type="Script" path="res://src/examples/goal_oriented_action_planning/objects/tree.gd" id="1_i3h2f"]
+[ext_resource type="Script" uid="uid://by5hxvxenmokx" path="res://src/examples/goal_oriented_action_planning/objects/tree.gd" id="1_i3h2f"]
 [ext_resource type="Texture2D" uid="uid://cnexpfq7stqbo" path="res://src/assets/art/kevinsmomshouse/fantasy_ [version 2.0]/forest_/forest_ [resources].png" id="2_k6g40"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_53s1r"]

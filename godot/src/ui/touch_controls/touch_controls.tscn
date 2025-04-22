@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ctcmtw6g3on0u"]
 
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="1_0mk50"]
-[ext_resource type="Script" path="res://src/ui/touch_controls/touch_controls.gd" id="1_d8k0l"]
+[ext_resource type="Script" uid="uid://dec5ksnt7uu7w" path="res://src/ui/touch_controls/touch_controls.gd" id="1_d8k0l"]
 
 [node name="TouchControls" type="CanvasLayer"]
 script = ExtResource("1_d8k0l")
