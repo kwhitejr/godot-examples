@@ -28,8 +28,9 @@ func perform(actor, delta) -> bool:
 		return false
 
 	if closest_food.position.distance_to(actor.position) < 20:
-		var current_hunger = GoapWorldState.get_state(GoapConstants.STATE_HUNGER)
-		GoapWorldState.set_state(GoapConstants.STATE_HUNGER, current_hunger - closest_food.nutrition)
+		var current_hunger = actor.state.get_hunger_count()
+		var new_hunger_count = current_hunger - closest_food.nutrition
+		actor.state.set_hunger_count(new_hunger_count)
 		closest_food.queue_free()
 		return true
 

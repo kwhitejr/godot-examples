@@ -10,10 +10,10 @@ enum CONDITIONS {
 	IS_HUNGRY
 }
 
-# World State
-const STATE_HUNGER = "hunger"
-const STATE_HAS_WOOD = "has_wood"
-const STATE_IS_FRIGHTENED = "is_frightened"
+# Hero State
+const HERO_STATE_HUNGER_COUNT = "hunger"
+const HERO_STATE_HAS_WOOD = "has_wood"
+const HERO_STATE_IS_FRIGHTENED = "is_frightened"
 
 # Groups
 const GROUP_COVER = "cover"

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b2ydokqixnyg" path="res://src/assets/art/Sprout Lands/UI Sprites/Sprite sheet for Basic Pack.png" id="1_1o168"]
 [ext_resource type="FontFile" uid="uid://bgih6vl4jh276" path="res://src/assets/fonts/Early GameBoy.ttf" id="2_t1ouu"]
-[ext_resource type="Script" path="res://src/ui/main_menu/demo_select.gd" id="3_jwsl4"]
+[ext_resource type="Script" uid="uid://dwiyvplpac0tn" path="res://src/ui/main_menu/demo_select.gd" id="3_jwsl4"]
 [ext_resource type="Theme" uid="uid://cfctgtdqvwl34" path="res://src/ui/base_ui_theme.tres" id="3_noswa"]
 
 [node name="MainMenu" type="Control"]

@@ -1,8 +1,8 @@
 [gd_scene load_steps=31 format=3 uid="uid://dlxxh0tjvmy32"]
 
-[ext_resource type="Script" path="res://src/examples/goal_oriented_action_planning/npcs/troll.gd" id="1_er3pa"]
+[ext_resource type="Script" uid="uid://c5mdurdg076ri" path="res://src/examples/goal_oriented_action_planning/npcs/troll.gd" id="1_er3pa"]
 [ext_resource type="Texture2D" uid="uid://qj3k6a2huksf" path="res://src/assets/art/kevinsmomshouse/forestSprites_ v1.2/troll_.png" id="1_yuift"]
-[ext_resource type="Script" path="res://src/examples/goal_oriented_action_planning/npcs/troll_animations.gd" id="3_u2ro8"]
+[ext_resource type="Script" uid="uid://c7p3yrjdyjd84" path="res://src/examples/goal_oriented_action_planning/npcs/troll_animations.gd" id="3_u2ro8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1vdym"]
 size = Vector2(7, 10)

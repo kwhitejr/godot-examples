@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c44o12ut3y18h" path="res://src/examples/top_down_controller/player/player.tscn" id="1_jnlgi"]
 [ext_resource type="PackedScene" uid="uid://ctcmtw6g3on0u" path="res://src/ui/touch_controls/touch_controls.tscn" id="2_gxmo7"]
 [ext_resource type="Texture2D" uid="uid://cnj3mf130xgd" path="res://src/assets/art/Sprout Lands/Tilesets/Grass.png" id="3_8pvjg"]
-[ext_resource type="Script" path="res://src/examples/top_down_controller/camera_2d.gd" id="3_q0tr2"]
+[ext_resource type="Script" uid="uid://byix0nivk6bgg" path="res://src/examples/top_down_controller/camera_2d.gd" id="3_q0tr2"]
 [ext_resource type="Texture2D" uid="uid://3ltg53uler4e" path="res://src/assets/art/Sprout Lands/Tilesets/Tilled_Dirt.png" id="4_0hntb"]
 [ext_resource type="Texture2D" uid="uid://cnjy73d0xfsoh" path="res://src/assets/art/Sprout Lands/Tilesets/Water.png" id="5_5qg3a"]
 [ext_resource type="Texture2D" uid="uid://do3yk3oyygip7" path="res://src/assets/art/Sprout Lands/Tilesets/Fences.png" id="6_rvwai"]

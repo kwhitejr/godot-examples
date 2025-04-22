@@ -1,18 +1,19 @@
-extends AbstractGoal
+class_name CalmDownGoal extends AbstractGoal
 
-class_name CalmDownGoal
 
+var _actor
+
+func _init(actor) -> void:
+	_actor = actor
 
 func get_clazz() -> String:
 	return "CalmDownGoal"
 	
 func is_valid() -> bool:
-	return GoapWorldState.get_state(GoapConstants.STATE_IS_FRIGHTENED, false)
-
+	return _actor.state.get_value(GoapConstants.HERO_STATE_IS_FRIGHTENED)
 
 func priority() -> int:
 	return 10
-
 
 func get_desired_state() -> Dictionary:
 	return {

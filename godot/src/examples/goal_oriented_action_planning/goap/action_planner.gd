@@ -1,12 +1,10 @@
 #
 # Planner. Goap's heart.
 #
-extends Node
+class_name GoapActionPlanner extends Node
 
-class_name GoapActionPlanner
 
 var _actions: Array[AbstractAction]
-
 
 #
 # Set actions available for planning.
@@ -20,7 +18,7 @@ func set_actions(actions: Array[AbstractAction]):
 # Receives a Goal and an optional blackboard.
 # Returns a list of actions to be executed.
 #
-func get_plan(goal: AbstractGoal, blackboard = {}) -> Array:
+func get_plan(goal: AbstractGoal, blackboard = {}):
 	#GoapWorldState.console_message("Goal: %s" % goal.get_class())
 	var desired_state = goal.get_desired_state().duplicate()
 
@@ -29,6 +27,10 @@ func get_plan(goal: AbstractGoal, blackboard = {}) -> Array:
 
 	return _find_best_plan(goal, desired_state, blackboard)
 
+func _get_empty_plan() -> GoapActionPlanner:
+	var action_planner = GoapActionPlanner.new()
+	action_planner.set_actions([])
+	return action_planner
 
 
 func _find_best_plan(goal, desired_state, blackboard):

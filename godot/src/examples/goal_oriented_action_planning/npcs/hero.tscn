@@ -1,8 +1,8 @@
 [gd_scene load_steps=33 format=3 uid="uid://bjdl1g0l2bs6x"]
 
-[ext_resource type="Script" path="res://src/examples/goal_oriented_action_planning/npcs/hero.gd" id="1_fwgp7"]
+[ext_resource type="Script" uid="uid://bbexvbllx3e2b" path="res://src/examples/goal_oriented_action_planning/npcs/hero.gd" id="1_fwgp7"]
 [ext_resource type="Texture2D" uid="uid://mhnuijnx5ukc" path="res://src/assets/art/kevinsmomshouse/forestSprites_ v1.2/mHero_ [elf].png" id="1_lvfk4"]
-[ext_resource type="Script" path="res://src/examples/goal_oriented_action_planning/npcs/hero_animations.gd" id="3_bum14"]
+[ext_resource type="Script" uid="uid://uqrkccmxq3xp" path="res://src/examples/goal_oriented_action_planning/npcs/hero_animations.gd" id="3_bum14"]
 [ext_resource type="Theme" uid="uid://cfctgtdqvwl34" path="res://src/ui/base_ui_theme.tres" id="3_tpi0m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1u6w7"]
@@ -264,9 +264,13 @@ theme = ExtResource("3_tpi0m")
 theme_override_font_sizes/font_size = 8
 text = "Afraid"
 
+[node name="HungerTimer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="hero_attack" from="." to="AnimatedSprite2D" method="_on_hero_hero_attack"]
 [connection signal="hero_die" from="." to="AnimatedSprite2D" method="_on_hero_hero_die"]
 [connection signal="hero_idle" from="." to="AnimatedSprite2D" method="_on_hero_hero_idle"]
 [connection signal="hero_run" from="." to="AnimatedSprite2D" method="_on_hero_hero_run"]
 [connection signal="body_entered" from="DetectionRadius" to="." method="_on_detection_radius_body_entered"]
 [connection signal="timeout" from="CalmDownTimer" to="." method="_on_calm_down_timer_timeout"]
+[connection signal="timeout" from="HungerTimer" to="." method="_on_hunger_timer_timeout"]

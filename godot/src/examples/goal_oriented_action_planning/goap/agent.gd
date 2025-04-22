@@ -6,16 +6,16 @@
 # As good practice, I suggest leaving it isolated like
 # this, so it makes re-use easy and it doesn't get tied
 # to unrelated implementation details (movement, collisions, etc)
-extends Node
+class_name GoapAgent extends Node
 
-class_name GoapAgent
 
-var _goals
-var _current_goal
+var _goals : Array[AbstractGoal]
+var _current_goal : AbstractGoal
 var _current_plan
-var _current_plan_step = 0
+var _current_plan_step := 0
 
 var _actor
+var _actor_state : AbstractActorState
 
 #
 # On every loop this script checks if the current goal is still
@@ -32,8 +32,8 @@ func _process(delta):
 			"position": _actor.position,
 		}
 
-		for s in GoapWorldState._state:
-			blackboard[s] = GoapWorldState._state[s]
+		for s in _actor_state.get_state():
+			blackboard[s] = _actor_state
 
 		_current_goal = goal
 		_current_plan = GoapExample.get_action_planner().get_plan(_current_goal, blackboard)
@@ -42,9 +42,10 @@ func _process(delta):
 		_follow_plan(_current_plan, delta)
 
 
-func init(actor, goals: Array):
+func init(actor, goals: Array[AbstractGoal], initial_actor_state: AbstractActorState):
 	_actor = actor
 	_goals = goals
+	_actor_state = initial_actor_state
 
 
 #

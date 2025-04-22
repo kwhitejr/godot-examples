@@ -35,7 +35,7 @@ func perform(actor, delta) -> bool:
 			actor.get_parent().add_child(firepit)
 			firepit.position = _closest_spot.position
 			firepit.z_index = _closest_spot.z_index
-			GoapWorldState.set_state(GoapConstants.STATE_HAS_WOOD, false)
+			actor.state.set_has_wood(false)
 			actor.make_idle(actor.position.direction_to(firepit.position))
 			return true
 

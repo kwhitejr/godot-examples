@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bmet8r2y042eh"]
 
-[ext_resource type="Script" path="res://src/examples/top_down_controller/objects/egg.gd" id="1_4a7wf"]
+[ext_resource type="Script" uid="uid://d0qcj0d1irbox" path="res://src/examples/top_down_controller/objects/egg.gd" id="1_4a7wf"]
 [ext_resource type="Texture2D" uid="uid://cnjnuajkxo8uy" path="res://src/assets/art/Sprout Lands/Characters/Egg_And_Nest.png" id="2_gkpbk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5xlmu"]

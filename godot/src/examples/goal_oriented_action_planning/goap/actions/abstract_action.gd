@@ -2,13 +2,16 @@
 # Abstract Action
 # Use as a contract for implemented actions.
 #
-extends Node
-
-class_name AbstractAction
+class_name AbstractAction extends Node
 
 
 func get_clazz() -> String:
+	print(get_class())
 	return "AbstractAction"
+	
+
+#func _init():
+	#assert(false, "AbstractAction is an abstract class and should not be instantiated directly.")
 	
 #
 # This indicates if the action should be considered or not.

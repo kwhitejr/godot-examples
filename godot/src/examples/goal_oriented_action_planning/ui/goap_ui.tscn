@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bvpjl8y7wp1ua"]
 
-[ext_resource type="Script" path="res://src/examples/goal_oriented_action_planning/ui/goap_ui.gd" id="1_oogyq"]
+[ext_resource type="Script" uid="uid://qnsy3jcocjyp" path="res://src/examples/goal_oriented_action_planning/ui/goap_ui.gd" id="1_oogyq"]
 [ext_resource type="Theme" uid="uid://cfctgtdqvwl34" path="res://src/ui/base_ui_theme.tres" id="2_nekpw"]
 
 [node name="GoapUi" type="Control"]
