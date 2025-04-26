@@ -28,7 +28,7 @@ var last_direction : Vector2 = Vector2.RIGHT
 
 func _ready() -> void:
 	#navigation_goal = GoapWorldState.get_closest_element(GoapConstants.GROUP_FIREPIT_SPOT, self)
-	navigation_goal = %Woodstock6
+	navigation_goal = $"../Woodstock3"
 	$NavigationAgent2D.target_position = navigation_goal.global_position
 	
 	# Here is where I define which goals are available for this

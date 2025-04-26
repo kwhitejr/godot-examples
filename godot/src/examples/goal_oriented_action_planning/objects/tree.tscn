@@ -18,9 +18,12 @@ position = Vector2(0, -10)
 texture = SubResource("AtlasTexture_53s1r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, -11)
 shape = SubResource("RectangleShape2D_tcfj5")
 
 [node name="ChopCooldownTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]
+top_level = true
+vertices = PackedVector2Array(4, -4, 4, -18, -4, -18, -4, -4)

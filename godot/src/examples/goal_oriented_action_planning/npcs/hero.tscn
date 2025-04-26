@@ -227,12 +227,11 @@ position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_xp12b")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-path_desired_distance = 5.0
-target_desired_distance = 5.0
+target_desired_distance = 20.0
 path_postprocessing = 1
 avoidance_enabled = true
 radius = 20.0
-avoidance_layers = 15
+avoidance_layers = 3
 avoidance_mask = 3
 debug_enabled = true
 

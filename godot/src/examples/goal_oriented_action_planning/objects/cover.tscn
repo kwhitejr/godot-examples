@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cq60p3brajmj7"]
+[gd_scene load_steps=5 format=3 uid="uid://cq60p3brajmj7"]
 
 [ext_resource type="Texture2D" uid="uid://cfwoxtdnppb62" path="res://src/assets/art/kevinsmomshouse/fantasy_ [version 2.0]/forest_/forest_ [fencesAndWalls].png" id="1_mcplw"]
 
@@ -6,8 +6,30 @@
 atlas = ExtResource("1_mcplw")
 region = Rect2(128, 122, 48, 35)
 
-[node name="Cover" type="Node2D" groups=["cover"]]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ju4e"]
+size = Vector2(11, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_56moo"]
+size = Vector2(12, 9)
+
+[node name="Cover" type="StaticBody2D" groups=["cover"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -13)
 texture = SubResource("AtlasTexture_q01o1")
+
+[node name="CollisionShape2DLeft" type="CollisionShape2D" parent="."]
+position = Vector2(-18.5, -1.5)
+shape = SubResource("RectangleShape2D_8ju4e")
+
+[node name="CollisionShape2DRight" type="CollisionShape2D" parent="."]
+position = Vector2(18, -1.5)
+shape = SubResource("RectangleShape2D_56moo")
+
+[node name="NavigationObstacle2DLeft" type="NavigationObstacle2D" parent="."]
+vertices = PackedVector2Array(-24, -6, -13, -6, -13, 3, -24, 3)
+avoidance_layers = 3
+
+[node name="NavigationObstacle2DRight" type="NavigationObstacle2D" parent="."]
+vertices = PackedVector2Array(24, -6, 24, 3, 12, 3, 12, -6)
+avoidance_layers = 3

@@ -17,3 +17,6 @@ texture = SubResource("AtlasTexture_h23t1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_sd1r7")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]
+vertices = PackedVector2Array(-5, -4, 5, -4, 5, 3, -5, 3)
