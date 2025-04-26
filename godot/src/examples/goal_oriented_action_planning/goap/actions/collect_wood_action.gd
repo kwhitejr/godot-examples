@@ -28,7 +28,7 @@ func get_effects() -> Dictionary:
 	}
 
 
-func perform(actor, delta) -> bool:
+func perform(actor: Hero, delta: float) -> bool:
 	var closest_stock = GoapWorldState.get_closest_element(GoapConstants.GROUP_WOODSTOCK, actor)
 
 	if closest_stock:
@@ -37,6 +37,7 @@ func perform(actor, delta) -> bool:
 			actor.state.set_has_wood(true)
 			return true
 		else:
-			actor.move_to(actor.position.direction_to(closest_stock.position), delta)
+			actor.set_navigation_goal(closest_stock)
+			#actor.move_to(actor.position.direction_to(closest_stock.position), delta)
 
 	return false

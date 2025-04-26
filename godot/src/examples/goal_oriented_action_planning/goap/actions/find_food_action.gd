@@ -21,7 +21,7 @@ func get_effects() -> Dictionary:
 	}
 
 
-func perform(actor, delta) -> bool:
+func perform(actor: Hero, delta: float) -> bool:
 	var closest_food = GoapWorldState.get_closest_element(GoapConstants.GROUP_FOOD, actor)
 
 	if closest_food == null:
@@ -34,5 +34,6 @@ func perform(actor, delta) -> bool:
 		closest_food.queue_free()
 		return true
 
-	actor.move_to(actor.position.direction_to(closest_food.position), delta)
+	actor.set_navigation_goal(closest_food)
+	#actor.move_to(actor.position.direction_to(closest_food.position), delta)
 	return false

@@ -24,7 +24,7 @@ func get_effects() -> Dictionary:
 	}
 
 
-func perform(actor, delta) -> bool:
+func perform(actor: Hero, delta: float) -> bool:
 	var _closest_spot = GoapWorldState.get_closest_element(GoapConstants.GROUP_FIREPIT_SPOT, actor)
 
 	if _closest_spot == null:
@@ -39,6 +39,7 @@ func perform(actor, delta) -> bool:
 			actor.make_idle(actor.position.direction_to(firepit.position))
 			return true
 
-	actor.move_to(actor.position.direction_to(_closest_spot.position), delta)
+	actor.set_navigation_goal(_closest_spot)
+	#actor.move_to(actor.position.direction_to(_closest_spot.position), delta)
 
 	return false

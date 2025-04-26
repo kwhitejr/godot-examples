@@ -27,7 +27,7 @@ func get_effects() -> Dictionary:
 	}
 
 
-func perform(actor, delta) -> bool:
+func perform(actor: Hero, delta: float) -> bool:
 	var _closest_tree = GoapWorldState.get_closest_element(GoapConstants.GROUP_TREE, actor)
 
 	if _closest_tree:
@@ -37,6 +37,7 @@ func perform(actor, delta) -> bool:
 					return true
 				return false
 		else:
-			actor.move_to(actor.position.direction_to(_closest_tree.position), delta)
+			actor.set_navigation_goal(_closest_tree)
+			#actor.move_to(actor.position.direction_to(_closest_tree.position), delta)
 
 	return false
