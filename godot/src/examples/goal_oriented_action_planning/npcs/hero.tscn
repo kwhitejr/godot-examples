@@ -231,8 +231,6 @@ target_desired_distance = 20.0
 path_postprocessing = 1
 avoidance_enabled = true
 radius = 20.0
-avoidance_layers = 3
-avoidance_mask = 3
 debug_enabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
