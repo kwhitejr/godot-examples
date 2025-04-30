@@ -18,16 +18,20 @@ signal hero_run(direction : Vector2)
 signal hero_attack(direction : Vector2)
 signal hero_die(direction : Vector2)
 
-const MAX_HUNGER := 100
-var last_direction : Vector2 = Vector2.RIGHT
+#@export var navigation_goal : Node
 @onready var state : HeroState = HeroState.new()
 
+const MAX_HUNGER := 100
+const MOVEMENT_SPEED := 4000.0
+
+var last_direction : Vector2 = Vector2.RIGHT
+
 func _ready() -> void:
-  # Here is where I define which goals are available for this
-  # npc. In this implementation, goals priority are calculated
-  # dynamically. Depending on your use case you might want to
-  # have a way to define different goal priorities depending on
-  # npc.
+	# Here is where I define which goals are available for this
+	# npc. In this implementation, goals priority are calculated
+	# dynamically. Depending on your use case you might want to
+	# have a way to define different goal priorities depending on
+	# npc.
 	var agent = GoapAgent.new()
 	agent.init(
 		self, 
@@ -41,18 +45,24 @@ func _ready() -> void:
 	)
 	add_child(agent)
 
-func _process(_delta) -> void:
+func _process(_delta: float) -> void:
 	$HeroUI/VBoxContainer/Fear.visible = state.meets_precondition(GoapConstants.HERO_STATE_IS_FRIGHTENED, true)
 	$HeroUI/VBoxContainer/Hunger.visible = state.get_hunger_count() >= 50
+	
+func _physics_process(delta: float) -> void:
+	if !$NavigationAgent2D.is_target_reached():
+		var nav_point_direction = to_local($NavigationAgent2D.get_next_path_position()).normalized()
+		last_direction = nav_point_direction
+		hero_run.emit(nav_point_direction)
+		velocity = nav_point_direction * MOVEMENT_SPEED * delta
+		move_and_slide()
 
-func make_idle(direction) -> void:
+func make_idle(direction: Vector2) -> void:
 	hero_idle.emit(direction)
 
-func move_to(direction, delta) -> void:
-	last_direction = direction
-	hero_run.emit(direction)
-	# warning-ignore:return_value_discarded
-	move_and_collide(direction * delta * 100)
+
+func set_navigation_goal(goal: Node) -> void:
+	$NavigationAgent2D.target_position = goal.global_position
 
 
 func chop_tree(tree) -> bool:

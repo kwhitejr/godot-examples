@@ -1,8 +1,6 @@
 extends StaticBody2D
 
-
 var _health = 3
-
 
 func chop() -> bool:
 	if not $ChopCooldownTimer.is_stopped():

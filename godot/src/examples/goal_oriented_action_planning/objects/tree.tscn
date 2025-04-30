@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvlio778bbhm3"]
+[gd_scene load_steps=6 format=3 uid="uid://cvlio778bbhm3"]
 
 [ext_resource type="Script" uid="uid://by5hxvxenmokx" path="res://src/examples/goal_oriented_action_planning/objects/tree.gd" id="1_i3h2f"]
 [ext_resource type="Texture2D" uid="uid://cnexpfq7stqbo" path="res://src/assets/art/kevinsmomshouse/fantasy_ [version 2.0]/forest_/forest_ [resources].png" id="2_k6g40"]
+[ext_resource type="Script" uid="uid://cs2delm6vux6n" path="res://src/common/tilemaplayer_navigation_removal_2d.gd" id="3_dpusk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_53s1r"]
 atlas = ExtResource("2_k6g40")
@@ -18,9 +19,12 @@ position = Vector2(0, -10)
 texture = SubResource("AtlasTexture_53s1r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, -11)
 shape = SubResource("RectangleShape2D_tcfj5")
+
+[node name="TileMapLayerNavigationRemoval2D" type="Node2D" parent="CollisionShape2D"]
+script = ExtResource("3_dpusk")
+metadata/_custom_type_script = "uid://cs2delm6vux6n"
 
 [node name="ChopCooldownTimer" type="Timer" parent="."]
 one_shot = true

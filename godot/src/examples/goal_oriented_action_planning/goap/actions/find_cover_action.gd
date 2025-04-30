@@ -21,7 +21,7 @@ func get_effects() -> Dictionary:
 	}
 
 
-func perform(actor, delta) -> bool:
+func perform(actor: Hero, delta: float) -> bool:
 	var closest_cover = GoapWorldState.get_closest_element(GoapConstants.GROUP_COVER, actor)
 
 	if closest_cover == null:
@@ -31,5 +31,6 @@ func perform(actor, delta) -> bool:
 		actor.make_idle(actor.position.direction_to(closest_cover.position))
 		return true
 
-	actor.move_to(actor.position.direction_to(closest_cover.position), delta)
+	actor.set_navigation_goal(closest_cover)
+
 	return false
