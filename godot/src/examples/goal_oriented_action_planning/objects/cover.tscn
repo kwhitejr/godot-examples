@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cq60p3brajmj7"]
+[gd_scene load_steps=6 format=3 uid="uid://cq60p3brajmj7"]
 
 [ext_resource type="Texture2D" uid="uid://cfwoxtdnppb62" path="res://src/assets/art/kevinsmomshouse/fantasy_ [version 2.0]/forest_/forest_ [fencesAndWalls].png" id="1_mcplw"]
+[ext_resource type="Script" uid="uid://cs2delm6vux6n" path="res://src/common/tilemaplayer_navigation_removal_2d.gd" id="2_56moo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q01o1"]
 atlas = ExtResource("1_mcplw")
@@ -22,14 +23,14 @@ texture = SubResource("AtlasTexture_q01o1")
 position = Vector2(-18.5, -1.5)
 shape = SubResource("RectangleShape2D_8ju4e")
 
+[node name="TileMapLayerNavigationRemoval2D" type="Node2D" parent="CollisionShape2DLeft"]
+script = ExtResource("2_56moo")
+metadata/_custom_type_script = "uid://cs2delm6vux6n"
+
 [node name="CollisionShape2DRight" type="CollisionShape2D" parent="."]
 position = Vector2(18, -1.5)
 shape = SubResource("RectangleShape2D_56moo")
 
-[node name="NavigationObstacle2DLeft" type="NavigationObstacle2D" parent="."]
-vertices = PackedVector2Array(-24, -6, -13, -6, -13, 3, -24, 3)
-avoidance_layers = 3
-
-[node name="NavigationObstacle2DRight" type="NavigationObstacle2D" parent="."]
-vertices = PackedVector2Array(24, -6, 24, 3, 12, 3, 12, -6)
-avoidance_layers = 3
+[node name="TileMapLayerNavigationRemoval2D" type="Node2D" parent="CollisionShape2DRight"]
+script = ExtResource("2_56moo")
+metadata/_custom_type_script = "uid://cs2delm6vux6n"

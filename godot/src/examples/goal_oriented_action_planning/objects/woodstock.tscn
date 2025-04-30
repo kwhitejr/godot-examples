@@ -1,13 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://b70mwk6mo1nog"]
+[gd_scene load_steps=5 format=3 uid="uid://b70mwk6mo1nog"]
 
 [ext_resource type="Texture2D" uid="uid://cnexpfq7stqbo" path="res://src/assets/art/kevinsmomshouse/fantasy_ [version 2.0]/forest_/forest_ [resources].png" id="1_0j1xa"]
+[ext_resource type="Script" uid="uid://cs2delm6vux6n" path="res://src/common/tilemaplayer_navigation_removal_2d.gd" id="2_52pvt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h23t1"]
 atlas = ExtResource("1_0j1xa")
 region = Rect2(97, 130, 14, 11)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sd1r7"]
-size = Vector2(10, 7)
+size = Vector2(8, 7)
 
 [node name="Woodstock" type="StaticBody2D" groups=["woodstock"]]
 
@@ -18,5 +19,6 @@ texture = SubResource("AtlasTexture_h23t1")
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_sd1r7")
 
-[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]
-vertices = PackedVector2Array(-5, -4, 5, -4, 5, 3, -5, 3)
+[node name="TileMapLayerNavigationRemoval2D" type="Node2D" parent="CollisionShape2D"]
+script = ExtResource("2_52pvt")
+metadata/_custom_type_script = "uid://cs2delm6vux6n"

@@ -1,17 +1,11 @@
 extends Node2D
 class_name TileMapLayerNavigationRemoval2D
 
-# On-ready reference to the TileMapLayer
+# Reference to the navigation TileMapLayer
 @onready var tilemap_layer: TileMapLayer = %BaseGroundLayer
-# Exported reference to the TileMapLayer's navigation layer id
-@export var tilemap_layer_navigation_layer_id: int = 0
-
-# ID of the alternative tile with no navigation polygon (set in TileSet)
-@export var no_navigation_alternative_tile_id: int = 1
 
 # Cache for modified tiles to restore on exit
-# Stores [source_id, atlas_coords, alternative_tile] for each modified cell
-var _modified_tiles: Dictionary = {} # {Vector2i: [int, Vector2i, int]}
+var _modified_tiles: Array[Vector2i] = []
 
 func _ready() -> void:
 	# Wait until the node is fully added to the scene tree
@@ -42,42 +36,27 @@ func _set_scale(value: Vector2) -> void:
 	update_exclusion()
 
 func _exit_tree() -> void:
-	# Restore original tiles
-	if tilemap_layer:
-		for coords in _modified_tiles:
-			var source_id = _modified_tiles[coords][0]
-			var atlas_coords = _modified_tiles[coords][1]
-			var alternative_tile = _modified_tiles[coords][2]
-			tilemap_layer.set_cell(coords, source_id, atlas_coords, alternative_tile)
-		_modified_tiles.clear()
+	# Notify TileMapLayer to remove excluded tiles
+	if tilemap_layer and not _modified_tiles.is_empty():
+		tilemap_layer.remove_excluded_tiles(_modified_tiles)
+	_modified_tiles.clear()
 
 func update_exclusion() -> void:
 	if not tilemap_layer:
 		return
 	
-	# Clear previous modifications
-	for coords in _modified_tiles:
-		var source_id = _modified_tiles[coords][0]
-		var atlas_coords = _modified_tiles[coords][1]
-		var alternative_tile = _modified_tiles[coords][2]
-		tilemap_layer.set_cell(coords, source_id, atlas_coords, alternative_tile)
+	# Clear previous exclusions
+	if not _modified_tiles.is_empty():
+		tilemap_layer.remove_excluded_tiles(_modified_tiles)
 	_modified_tiles.clear()
 	
-	# Get overlapping tiles based on parent
+	# Get overlapping tiles
 	var tile_coords = _get_overlapping_tiles()
-	print("Tile coords to process: ", tile_coords)
+	_modified_tiles = tile_coords
 	
-	# Set alternative tile with no navigation
-	for coords in tile_coords:
-		var source_id = tilemap_layer.get_cell_source_id(coords)
-		var atlas_coords = tilemap_layer.get_cell_atlas_coords(coords)
-		var alternative_tile = tilemap_layer.get_cell_alternative_tile(coords)
-		if source_id >= 0:
-			# Cache original tile
-			_modified_tiles[coords] = [source_id, atlas_coords, alternative_tile]
-			# Set alternative tile (e.g., ID 1 with no navigation)
-			tilemap_layer.set_cell(coords, source_id, atlas_coords, no_navigation_alternative_tile_id)
-			print("Set alternative tile at ", coords, source_id, atlas_coords, no_navigation_alternative_tile_id)
+	# Notify TileMapLayer of new excluded tiles
+	if not tile_coords.is_empty():
+		tilemap_layer.add_excluded_tiles(tile_coords)
 
 func _get_overlapping_tiles() -> Array[Vector2i]:
 	var tile_coords: Array[Vector2i] = []
@@ -93,7 +72,7 @@ func _get_overlapping_tiles() -> Array[Vector2i]:
 	elif parent is CollisionShape2D and parent.shape:
 		# Use the parent's CollisionShape2D
 		tile_coords.append_array(_get_tiles_for_collision_shape(parent))
-
+	
 	return tile_coords
 
 func _get_tiles_for_collision_shape(collision_shape: CollisionShape2D) -> Array[Vector2i]:
