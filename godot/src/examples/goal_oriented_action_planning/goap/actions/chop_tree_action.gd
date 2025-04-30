@@ -38,6 +38,5 @@ func perform(actor: Hero, delta: float) -> bool:
 				return false
 		else:
 			actor.set_navigation_goal(_closest_tree)
-			#actor.move_to(actor.position.direction_to(_closest_tree.position), delta)
 
 	return false

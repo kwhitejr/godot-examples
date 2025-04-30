@@ -40,6 +40,5 @@ func perform(actor: Hero, delta: float) -> bool:
 			return true
 
 	actor.set_navigation_goal(_closest_spot)
-	#actor.move_to(actor.position.direction_to(_closest_spot.position), delta)
 
 	return false

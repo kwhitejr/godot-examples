@@ -32,5 +32,5 @@ func perform(actor: Hero, delta: float) -> bool:
 		return true
 
 	actor.set_navigation_goal(closest_cover)
-	#actor.move_to(actor.position.direction_to(closest_cover.position), delta)
+
 	return false

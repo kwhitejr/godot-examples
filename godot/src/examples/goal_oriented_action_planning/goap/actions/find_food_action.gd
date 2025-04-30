@@ -35,5 +35,5 @@ func perform(actor: Hero, delta: float) -> bool:
 		return true
 
 	actor.set_navigation_goal(closest_food)
-	#actor.move_to(actor.position.direction_to(closest_food.position), delta)
+
 	return false
